@@ -83,8 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
             decor.style.transformOrigin = "center"; // Делаем поворот вокруг центра
             decor.style.maxWidth = "100%";
             decor.style.clipPath = "inset(0px 0px 0px 0px)";
-
-            section.appendChild(decor);
         }
 });
 
