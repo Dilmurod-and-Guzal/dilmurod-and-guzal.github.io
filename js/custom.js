@@ -56,34 +56,35 @@ button.addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-        let decorCount = 7; // Четко 7 декоров
-        let step = 350 // 350px или адаптивно
+    let decorCount = 7; // Четко 7 декоров
+    let step = 325; // 350px между декорами
 
-        for (let i = 0; i < decorCount; i++) {
-            let decor = document.createElement("img");
-            decor.src = `media/img/flower.png`;
-            decor.classList.add("decor");
+    for (let i = 0; i < decorCount; i++) {
+        let decor = document.createElement("img");
+        decor.src = `media/img/flower.png`;
+        decor.classList.add("decor");
 
-            let side = i % 2 === 0 ? "left" : "right"; // Чередуем стороны
-            let distance = Math.random() * 20 + 40; // 40-60px отдаление
-            let offset = Math.random() * 30 + 10; // 10-40px отступ от края
-            let size = Math.random() * 20 + 50; // Размер 50-70px
-            let topPos = (i + 1) * step; // Расстояние между декорами
-            let rotation = Math.random() * 360; // Поворот от 0° до 360°
+        let side = i % 2 === 0 ? "left" : "right"; // Чередуем стороны
+        let distance = Math.random() * 20 + 40; // 40-60px отдаление
+        let offset = Math.random() * 30 + 10; // 10-40px отступ от края
+        let size = Math.random() * 20 + 50; // Размер 50-70px
+        let topPos = (i + 1) * step; // Расстояние между декорами
+        let rotation = Math.random() * 360; // Поворот от 0° до 360°
 
-            decor.style.position = "absolute";
-            decor.style.width = `${size}px`;
-            decor.style.height = "auto";
-            decor.style[side] = `${offset}px`;
-            decor.style.top = `${topPos}px`;
-            decor.style.zIndex = "-1";
-            decor.style.opacity = "0.8";
-            decor.style.pointerEvents = "none";
-            decor.style.transform = `translateX(${side === "left" ? `-${distance}px` : distance}px) rotate(${rotation}deg)`;
-            decor.style.transformOrigin = "center"; // Делаем поворот вокруг центра
-            decor.style.maxWidth = "100%";
-            decor.style.clipPath = "inset(0px 0px 0px 0px)";
-        }
+        decor.style.position = "absolute";
+        decor.style.width = `${size}px`;
+        decor.style.height = "auto";
+        decor.style[side] = `${offset}px`;
+        decor.style.top = `${topPos}px`;
+        decor.style.zIndex = "-1";
+        decor.style.opacity = "0.8";
+        decor.style.pointerEvents = "none";
+        decor.style.transform = `translateX(${side === "left" ? `-${distance}px` : distance}px) rotate(${rotation}deg)`;
+        decor.style.transformOrigin = "center"; // Делаем поворот вокруг центра
+        decor.style.maxWidth = "100%";
+
+        document.body.appendChild(decor); // ⬅️ Вот это было забыто
+    }
 });
 
 
