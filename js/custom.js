@@ -73,9 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 0; i < decorCount; i++) {
         let decor = document.createElement("img");
-        decor.src = `media/img/flower.png`;
+        var fileName = window.location.pathname.split('/').pop();
+        let name = fileName.split('.').slice(0, -1).join('.');
+        decor.src = `media/img/${name.slice(-1)}/flower.png`;
         decor.classList.add("decor");
-
+        
         let side = i % 2 === 0 ? "left" : "right"; // Чередуем стороны
         let distance = Math.random() * 20 + 40; // 40-60px отдаление
         let offset = Math.random() * 30 + 10; // 10-40px отступ от края
