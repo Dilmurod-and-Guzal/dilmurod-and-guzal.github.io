@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         decor.style.transformOrigin = "center"; // Делаем поворот вокруг центра
         decor.style.maxWidth = "100%";
 
-        document.body.appendChild(decor); // ⬅️ Вот это было забыто
+        document.body.appendChild(decor); 
     }
 });
 

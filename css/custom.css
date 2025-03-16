@@ -111,7 +111,7 @@ p {
 
 .photo-no-shadow {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     margin: 20px auto;
 }
 
@@ -133,7 +133,7 @@ p {
 }
 .photo-left img, .photo-right img {
     flex: 1;
-    max-width: 35%;
+    max-width: 40%;
 }
 .photo-left div, .photo-right div {
     flex: 1;
@@ -196,10 +196,10 @@ p {
         align-items: center;
     }
     .photo-left img, .photo-right img {
-        max-width: 90%;
+        max-width: 80%;
     }
     .photo-left div, .photo-right div {
-        max-width: 90%;
+        max-width: 80%;
         order: 1;
     }
 }
