@@ -29,7 +29,7 @@ function generateCalendar() {
         div.innerText = day;
         div.classList.add("day");
         if (day === highlightedDay) {
-            div.classList.add("highlight");
+            div.classList.add("highlight"); 
         }
         calendarDays.appendChild(div);
     }
@@ -37,23 +37,35 @@ function generateCalendar() {
 
 generateCalendar();
 
-const audio = document.getElementById("audio");
-const button = document.getElementById("musicButton");
-const icon = document.getElementById("icon");
-let isPlaying = false;
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("audio");
+    const button = document.getElementById("musicButton");
+    const icon = document.getElementById("icon");
+    let isPlaying = false;
 
-button.addEventListener("click", () => {
-    if (isPlaying) {
-        audio.pause();
-        button.classList.remove("playing");
-        icon.src = "https://cdn-icons-png.flaticon.com/512/27/27223.png"; // Play icon
-    } else {
-        audio.play();
+    // Пробуем запустить аудио автоматически
+    audio.play().then(() => {
+        isPlaying = true;
         button.classList.add("playing");
         icon.src = "https://cdn-icons-png.flaticon.com/512/64/64595.png"; // Pause icon
-    }
-    isPlaying = !isPlaying;
+    }).catch(() => {
+        console.log("Автовоспроизведение заблокировано браузером.");
+    });
+
+    button.addEventListener("click", () => {
+        if (isPlaying) {
+            audio.pause();
+            button.classList.remove("playing");
+            icon.src = "https://cdn-icons-png.flaticon.com/512/27/27223.png"; // Play icon
+        } else {
+            audio.play();
+            button.classList.add("playing");
+            icon.src = "https://cdn-icons-png.flaticon.com/512/64/64595.png"; // Pause icon
+        }
+        isPlaying = !isPlaying;
+    });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     let decorCount = 7; // Четко 7 декоров
