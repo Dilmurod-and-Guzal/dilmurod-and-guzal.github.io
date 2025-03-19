@@ -73,9 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 0; i < decorCount; i++) {
         let decor = document.createElement("img");
-        var fileName = window.location.pathname.split('/').pop();
-        let name = fileName.split('.').slice(0, -1).join('.');
-        decor.src = `media/img/${name.slice(-1)}/flower.png`;
+        decor.src = `media/img/2/flower.png`;
         decor.classList.add("decor");
         
         let side = i % 2 === 0 ? "left" : "right"; // Чередуем стороны

@@ -6,20 +6,14 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom right, #e3e3e3, #c4c1c1);
+    background: linear-gradient(to bottom right, #e3e3e3, #c4c2bb);
 }
+
 
 .big {
     font-size: 128px;
     font-family: 'Marck Script';
 }
-
-.silver-text {
-    background: linear-gradient(45deg, #444444, #777777, #bbbbbb, #777777, #444444);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 
 h2 {
     font-weight: bold;
